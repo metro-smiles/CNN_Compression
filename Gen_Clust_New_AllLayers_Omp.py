@@ -90,25 +90,25 @@ for dir1 in dirs:
 	# Compute the clusters and the masks for each of the Convolution Layers
 	# The loops potentially allow us to potentually save the compression results at different rates
 	for thresh_conv in t_conv1_lst: 
-		n_list1 = compute_node_list(c1_arr, thresh_conv)
+		n_list1 = omp_appx(c1_arr, thresh_conv)
 		with open( op_fldr + dir1 + '/Vars_Conv1_' + str(thresh_conv) + '.pickle', 'wb') as f: # Save the neuron list information
 			pickle.dump(n_list1, f)
 		print("Acceptances Conv1: " + str( np.sum(((np.sum(n_list1, axis = 0) > 0) * 1.0).reshape(1, n_list1.shape[1])) ))
 	
 	for thresh_conv in t_conv2_lst:
-		n_list2 = compute_node_list(c2_arr, thresh_conv)
+		n_list2 = omp_appx(c2_arr, thresh_conv)
 		with open( op_fldr + dir1 + '/Vars_Conv2_' + str(thresh_conv) + '.pickle', 'wb') as f: # Save the neuron list information
 			pickle.dump(n_list2, f)
 		print("Acceptances Conv2: " + str( np.sum(((np.sum(n_list2, axis = 0) > 0) * 1.0).reshape(1, n_list2.shape[1])) ))
 	
 	for thresh_conv in t_conv3_lst:
-		n_list3 = compute_node_list(c3_arr, thresh_conv)
+		n_list3 = omp_appx(c3_arr, thresh_conv)
 		with open( op_fldr + dir1 + '/Vars_Conv3_' + str(thresh_conv) + '.pickle', 'wb') as f: # Save the neuron list information
 			pickle.dump(n_list3, f)
 		print("Acceptances Conv3: " + str( np.sum(((np.sum(n_list3, axis = 0) > 0) * 1.0).reshape(1, n_list3.shape[1])) ))
 	
 	for thresh_conv in t_conv4_lst:
-		n_list4 = compute_node_list(c4_arr, thresh_conv)
+		n_list4 = omp_appx(c4_arr, thresh_conv)
 		with open( op_fldr + dir1 + '/Vars_Conv4_' + str(thresh_conv) + '.pickle', 'wb') as f: # Save the neuron list information
 			pickle.dump(n_list4, f)
 		print("Acceptances Conv4: " + str( np.sum(((np.sum(n_list4, axis = 0) > 0) * 1.0).reshape(1, n_list4.shape[1])) ))
