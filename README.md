@@ -36,11 +36,11 @@ Following includes the instructions in greater detail:
 Following this, please run the Coreset compression algorithm as follows
 # compress_pytorch.py 
 - Allows for further compression using Coreset-S or Coreset-K. Set the paths to the input model and the output model files, set the compression thresholds for each layer and then run
-- python compress_pytorch.py -i <path to input model> -o <path to output model> -r 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 -t 2
+- python compress_pytorch.py -i /path/to/input/model -o /path/to/output/model -r 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 -t 2
 
--- The -t option reflects that which coreset compression model we want to use, 2 stands for Coreset-K, 1 stands for Coreset-S and so on.
+-- The -t option reflects that which coreset compression model we want to use, 2 stands for Coreset-K, 1 stands for Coreset-S and so on. The -r option reflects the compression ratios at the different layers. The -i option is the path to the input model, the -o option is the path to the output model.
 
-
+If you find this repo useful, please cite the following paper
 ## Citation
 ```
 @inproceedings{dubey2018coreset,
